@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSpeech } from './hooks/useSpeech';
 import { chatService } from './service/chatService';
 
@@ -20,10 +20,12 @@ function ChatGPT({ transcript, listening, resetTranscript, setLoading, message, 
 
   useEffect(() => {
     if (!listening) callGpt();
+    // eslint-disable-next-line
   }, [transcript, listening]);
 
   useEffect(() => {
     if (message) speak({ message, pitch: 0 });
+    // eslint-disable-next-line
   }, [message]);
 
   return (
