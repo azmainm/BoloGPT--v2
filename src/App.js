@@ -21,21 +21,33 @@ function App() {
 
   return (
     <main>
-      <h1>ChatGPT Voice Recognition</h1>
+      <h1>
+        <span className="bolo-text">Bolo</span>
+        <span>GPT</span>
+      </h1>
+
       <div className="buttons_container">
-        <button className='micStart' onClick={SpeechRecognition.startListening} style={{ background: listening ? '#e3bfbc' : '#9db0b8' }}><FiberManualRecord style={{ color: 'red' }}/></button>
-        <button className='micStop' onClick={SpeechRecognition.stopListening}><Stop/></button>
-        <ChatGPT 
-          transcript={transcript} 
-          listening={listening}   
-          resetTranscript={resetTranscript} 
-          setLoading={setLoading} 
-          message={message} 
+        <button className='micStart' onClick={SpeechRecognition.startListening} style={{ background: listening ? '#dbfcf9' : '#a1f0e4cc' }}><FiberManualRecord style={{ color: 'black' }} /></button>
+        <button className='micStop' onClick={SpeechRecognition.stopListening}><Stop /></button>
+        <ChatGPT
+          transcript={transcript}
+          listening={listening}
+          resetTranscript={resetTranscript}
+          setLoading={setLoading}
+          message={message}
           setMessage={setMessage}
         />
       </div>
-      {loading && <CircularProgress/>}
-      <span>{message}</span>
+      {loading && <CircularProgress />}
+      <div className="transcript_container">
+        <p><strong>User:</strong> {transcript}</p>
+        <p><strong>BoloGPT:</strong> {message}</p>
+      </div>
+      {/* <Footer /> */}
+
+      <h1 className="footer">
+        © Azmain Morshed 2023. All rights reserved.
+      </h1>
     </main>
   );
 }

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSpeech } from './hooks/useSpeech';
-import { chatService } from './service/chatService'; 
+import { chatService } from './service/chatService';
 
-function ChatGPT({ transcript, listening, resetTranscript, setLoading, message, setMessage }) { 
-  const { speak, stopVoice } = useSpeech(); 
+function ChatGPT({ transcript, listening, resetTranscript, setLoading, message, setMessage }) {
+  const { speak, stopVoice } = useSpeech();
 
   const callGpt = async () => {
     setLoading(true)
@@ -16,15 +16,15 @@ function ChatGPT({ transcript, listening, resetTranscript, setLoading, message, 
     resetTranscript();
     setMessage('');
     stopVoice();
-  } 
+  }
 
   useEffect(() => {
-   if(!listening) callGpt();
-  },[transcript, listening]); 
+    if (!listening) callGpt();
+  }, [transcript, listening]);
 
   useEffect(() => {
-    if(message) speak({ message, pitch: 0 });
-   },[message]); 
+    if (message) speak({ message, pitch: 0 });
+  }, [message]);
 
   return (
     <div>

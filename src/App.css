@@ -5,9 +5,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
-html, body {
+html,
+body {
   background-color: #1a1f21;
-} 
+}
 
 .buttons_container {
   display: flex;
@@ -20,13 +21,13 @@ main {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 span {
   width: 50%;
   text-align: center;
-  color: white; 
+  color: white;
 }
 
 h1 {
@@ -42,9 +43,37 @@ button {
   outline: 0;
   cursor: pointer;
   border-radius: 4px;
-  background: #9db0b8;
+  background: #a1f0e4cc;
 }
 
 .micStart:hover {
-  background-color: #e3bfbc;
+  background-color: #a1f0e4cc;
+}
+
+/* Add or modify these styles in your App.css */
+.transcript_container {
+  margin-top: 20px;
+  background-color: rgba(161, 240, 228, 0.8);
+  /* Optional: add a semi-transparent background */
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.transcript_container p {
+  margin: 10px 10px;
+  color: #333;
+  font-size: 16px;
+}
+
+/* App.css */
+.bolo-text {
+  color: #52cfb0;
+}
+
+.footer {
+  color: white;
+  font-size: 10px;
+  font-weight: lighter;
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
